@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  margin: auto;
+  min-height: 100dvh;
+  justify-content: center;
+  align-items: center;
+  font-family: Montserrat;
+  background-color: #a28089;
+  position: relative;
+}
+
+.card {
+  width: 100%;
+  max-width: clamp(400px, 100%, 600px);
+  height: fit-content;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  padding: 30px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.card__buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.card__buttons button {
+  padding: 5px;
+  border-radius: 5px;
+  min-width: 150px;
+  background-color: #b2ffff;
+  color: gray;
+  outline: none;
+  border: 1px solid #b2ffff;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+@keyframes desaparecer {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
+.no:hover {
+  animation: desaparecer 1s ease both;
+}
+
+.corazon {
+  display: none;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes inflar {
+  from {
+    width: 30px;
+    height: 30px;
+  }
+  to {
+    transform: scale(6000%);
+  }
+}
+
+.corazon.show {
+  display: block;
+  z-index: 10000000000;
+  animation: inflar 10s ease both;
+}
+
+.beso {
+  display: none;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.beso.show {
+  display: block;
+  z-index: 100000000000;
+  animation: inflar2 10s ease both;
+}
+
+@keyframes inflar2 {
+  from {
+    width: 20px;
+    height: 20px;
+  }
+  to {
+    transform: scale(1000%);
+  }
+}
